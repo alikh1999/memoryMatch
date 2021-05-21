@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using UnityEditor;
 using UnityEngine;
 using Zenject;
 
@@ -33,7 +33,7 @@ namespace Gameplay.Card
                 }
             }
 
-            return cards.OrderBy(c => GUID.Generate()).ToList();
+            return cards.OrderBy(c => Guid.NewGuid()).ToList();
         }
         
         private CardContainer GenerateCard(CardNumberContent content)

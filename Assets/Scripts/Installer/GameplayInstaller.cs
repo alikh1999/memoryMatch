@@ -13,9 +13,6 @@ namespace Installer
         [SerializeField]
         private bool _isWindowsBuild;
 
-        public GameObject touch;
-        public GameObject mouse;
-
         public override void InstallBindings()
         {
             Container.Bind<ICardFactory>().To<CardFactory>().FromComponentOn(cardFactory).AsSingle();

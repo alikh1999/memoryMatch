@@ -15,7 +15,6 @@ public class NumberCardContentView : MonoBehaviour
 
     private void UpdateView(CardContent c)
     {
-        Debug.Log($"UpdateView  {((CardNumberContent)c).Number}");
         if (c is CardNumberContent n)
             _text.text = n.Number.ToString();
     }

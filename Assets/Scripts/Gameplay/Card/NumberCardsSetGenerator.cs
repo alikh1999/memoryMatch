@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Gameplay.Card
+namespace Gameplay.Core
 {
     public class NumberCardsSetGenerator :  BaseCardsSetGenerator, ICardSetGenerator
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Gameplay.Card
+namespace Gameplay.Core
 {
     public class CardFactory : MonoBehaviour, ICardFactory
     {

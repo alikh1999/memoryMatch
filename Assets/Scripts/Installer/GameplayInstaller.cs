@@ -1,5 +1,5 @@
 using Gameplay;
-using Gameplay.Card;
+using Gameplay.Core;
 using UnityEngine;
 using Zenject;
 

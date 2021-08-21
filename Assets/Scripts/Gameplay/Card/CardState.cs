@@ -1,5 +1,5 @@
 using System;
-namespace Gameplay.Card
+namespace Gameplay.Core
 {
     public enum CardState
     {

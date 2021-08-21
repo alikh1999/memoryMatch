@@ -1,9 +1,10 @@
-﻿using Gameplay.Card;
+﻿using Gameplay.Core;
 using NUnit.Framework;
 
 namespace Tests.UI
 {
-    public class CardNumberContentTest
+    //todo: test other way when isEqual must return true
+    public partial class CardNumberContentTest
     {
         [Test]
         public void Should_ReturnFalse_When_IsEqual_Called_WithPerimeterThat_IsNotSame_BaseClass()
@@ -11,24 +12,13 @@ namespace Tests.UI
             //arrange
             int randomNumber = 2;
             var cardNumberContent = new CardNumberContent(randomNumber);
-            var cardSomethingContent = new CardSomethingContent();
+            var fakeCardContent = new FakeCardContent();
             
             //act
-            var result = cardNumberContent.IsEqual(cardSomethingContent);
+            var result = cardNumberContent.IsEqual(fakeCardContent);
             
             //assert
             Assert.AreEqual(false, result);
-        }
-        
-        
-        
-        
-        private class CardSomethingContent : CardContent
-        {
-            public override bool IsEqual(CardContent content)
-            {
-                return false;
-            }
         }
     }
 }

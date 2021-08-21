@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using Zenject;
 
-namespace Gameplay.Card
+namespace Gameplay.Core
 {
     
     public abstract class BaseCardsSetGenerator : MonoBehaviour, ICardSetGenerator
@@ -39,7 +39,7 @@ namespace Gameplay.Card
         private MonoCard GenerateCard(CardNumberContent content)
         {
             var monoCard = _cardFactory.Create();
-            monoCard.Card.Content = content;
+            monoCard.Card = new Card(content);
             return monoCard;
         }
 

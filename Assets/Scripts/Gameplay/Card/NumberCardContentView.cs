@@ -1,5 +1,5 @@
 ﻿using System;
-using Gameplay.Card;
+using Gameplay.Core;
 using UnityEngine;
 using UnityEngine.UI;
 

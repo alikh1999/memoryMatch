@@ -1,4 +1,4 @@
-using Gameplay.Card;
+using Gameplay.Core;
 using ScriptableObjects;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,7 +17,7 @@ namespace Gameplay
         [SerializeField]
         private Countdown _countdown;
         [SerializeField]
-        private CardMatcherMono matcherMono;
+        private MonoCardMatcher matcher;
         
         [Header("Events")]
         [SerializeField]
@@ -26,7 +26,7 @@ namespace Gameplay
         private UnityEvent OnLost;
         
         
-        private List<Card.MonoCard> _cards = new List<Card.MonoCard>();
+        private List<Card> _cards = new List<Card>();
         private LevelData _level;
         private ICardSetGenerator _generator;
  
@@ -45,8 +45,8 @@ namespace Gameplay
 
         private void Init()
         {
-            matcherMono.MatchCount = _cardsMatchCount;
-            matcherMono.CardMatcher.OnMatched += OnMatched;
+            matcher.MatchCount = _cardsMatchCount;
+            matcher.Matched += OnMatched;
 
             var args = new CardSetGenerationArgs(_level.CardsCount, _cardsMatchCount);
             var cards = _generator.GenerateSet(args);
@@ -58,9 +58,9 @@ namespace Gameplay
             _countdown.OnReachedZero += () => OnLost.Invoke();
         }
 
-        private void OnMatched(List<Card.MonoCard> monoCards)
+        private void OnMatched(List<Card> cards)
         {
-            monoCards.ForEach(c => _cards.Remove(c));
+            cards.ForEach(c => _cards.Remove(c));
             if (_cards.Count > 0) 
                 return;
             
@@ -68,11 +68,11 @@ namespace Gameplay
             OnWon?.Invoke();
         }
 
-        private void InitCard(Card.MonoCard monoCard)
+        private void InitCard(Core.MonoCard monoCard)
         {
             monoCard.transform.SetParent(_cardsContainer);
-            monoCard.GetComponent<CardInteraction>().OnInteacted += () => matcherMono.TryShowCards(monoCard);
-            _cards.Add(monoCard);
+            monoCard.GetComponent<CardInteraction>().OnInteacted += () => matcher.TryShowCards(monoCard);
+            _cards.Add(monoCard.Card);
         }
     }
 }

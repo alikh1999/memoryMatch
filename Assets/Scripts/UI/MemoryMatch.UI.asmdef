@@ -1,8 +1,9 @@
 {
-    "name": "MemoryMatch",
+    "name": "MemoryMatch.UI",
+    "rootNamespace": "",
     "references": [
         "GUID:6055be8ebefd69e48b49212b09b47b2f",
-        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4"
+        "GUID:7bbe69e70d62568409d82a74052d067d"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

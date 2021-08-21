@@ -181,6 +181,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &128447105
 Canvas:
   m_ObjectHideFlags: 0
@@ -1100,6 +1101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1329,6 +1331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1724,7 +1727,7 @@ MonoBehaviour:
   _cardsMatchCount: 2
   _cardsContainer: {fileID: 608449812}
   _countdown: {fileID: 1963261800}
-  matcherMono: {fileID: 1399012753}
+  matcher: {fileID: 1399012753}
   OnWon:
     m_PersistentCalls:
       m_Calls:

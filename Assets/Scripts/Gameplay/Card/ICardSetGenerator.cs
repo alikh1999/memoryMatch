@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Gameplay.Card
+namespace Gameplay.Core
 {
     public interface ICardSetGenerator
     {

@@ -3,40 +3,26 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
-namespace Gameplay.Card
+namespace Gameplay.Core
 {
+    //todo: content should be passed as ctr arg
     public class Card
     {
-        private CardContent _content;
         private CardState _state = CardState.Hiding;
 
         private bool _isDiscarded;
-        public CardContent Content
-        {
-            get => _content;
-            set
-            {
-                _content = value;
-                ContentSet?.Invoke(value);
-            }
-        }
 
-        public GameObject GameObject { get; }
-
-        public event Action<CardContent> ContentSet;
+        public event Action MyEvent;
+        public CardContent Content { get; }
         public event Action Shown;
         public event Action Hidden;
         public event Action Discarded;
 
-        public Card()
+        public Card(CardContent content)
         {
+            Content = content;
         }
         
-        public Card(GameObject gameObject)
-        {
-            gameObject = gameObject;
-        }
-
         public void Discard()
         {
             if (_isDiscarded)

@@ -1,9 +1,10 @@
 {
-    "name": "Tests",
+    "name": "MemoryMatch.Test",
+    "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "MemoryMatch"
+        "MemoryMatch.Core"
     ],
     "includePlatforms": [
         "Editor"

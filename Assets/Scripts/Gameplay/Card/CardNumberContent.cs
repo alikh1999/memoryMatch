@@ -1,4 +1,4 @@
-namespace Gameplay.Card
+namespace Gameplay.Core
 {
     public class CardNumberContent : CardContent
     {

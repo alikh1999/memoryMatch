@@ -1,4 +1,4 @@
-﻿namespace Gameplay.Card
+﻿namespace Gameplay.Core
 {
     public abstract class CardContent
     {

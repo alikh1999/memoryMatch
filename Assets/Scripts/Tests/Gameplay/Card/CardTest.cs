@@ -1,33 +1,18 @@
 using UnityEngine;
 using NUnit.Framework;
-using Gameplay.Card;
+using Gameplay.Core;
 
 namespace Tests.UI
 {
-    //TODO: Write at least 6 more test
+    //TODO: Write 2 more test covering show and hide event 
     public class CardTest
     {
-        [Test]
-        public void Should_Fire_ContentEventSet_When_Content_Is_Set()
-        {
-            //arrange
-            var card = new Card();
-            bool isSet = false;
-            card.ContentSet += (Content) =>
-            {isSet = true;};
-
-            //act
-            card.Content = null;
-
-            //assert
-            Assert.AreEqual(true, isSet);
-        }
-
+        
         [Test]
         public void Should_Fire_ShowEvent_When_Show_Called()
         {
             //arrange
-            var card = new Card();
+            var card = CreateCard();
             bool isShowed = false;
             card.Shown += ()=>
             {
@@ -46,7 +31,7 @@ namespace Tests.UI
         {
             //arrange
             bool isHidden = false;
-            var card = new Card();
+            var card = CreateCard();
             card.Show();
             card.Hidden += () =>
             {
@@ -65,7 +50,7 @@ namespace Tests.UI
         {
             //arrange
             bool isDiscarded = false;
-            var card = new Card();
+            var card = CreateCard();
             card.Discarded += () =>
             {
                 isDiscarded = true;
@@ -83,7 +68,7 @@ namespace Tests.UI
         {
             //arrange
             bool isCalledOneTime = false;
-            var card = new Card();
+            var card = CreateCard();
             card.Discarded += () =>
             {
                 isCalledOneTime = !isCalledOneTime;
@@ -95,6 +80,11 @@ namespace Tests.UI
             
             //assert
             Assert.AreEqual(true, isCalledOneTime);
+        }
+
+        private Card CreateCard()
+        {
+            return new Card(new FakeCardContent());
         }
     }
 }

@@ -18,12 +18,12 @@ namespace Gameplay.Card
             _cardFactory = cardFactory;
         }
 
-        public List<CardContainer> GenerateSet(CardSetGenerationArgs args)
+        public List<MonoCard> GenerateSet(CardSetGenerationArgs args)
         {
             _args = args;
             var contents = GenerateContents(args.OriginalCount);
 
-            var cards = new List<CardContainer>();
+            var cards = new List<MonoCard>();
             foreach (var c in contents)
             {
                 for (int i = 0; i < args.MatchCount; i++)
@@ -36,11 +36,11 @@ namespace Gameplay.Card
             return cards.OrderBy(c => Guid.NewGuid()).ToList();
         }
         
-        private CardContainer GenerateCard(CardNumberContent content)
+        private MonoCard GenerateCard(CardNumberContent content)
         {
-            var card = _cardFactory.Create();
-            card.Content = content;
-            return card;
+            var monoCard = _cardFactory.Create();
+            monoCard.Card.Content = content;
+            return monoCard;
         }
 
         protected abstract List<CardNumberContent> GenerateContents(int count);

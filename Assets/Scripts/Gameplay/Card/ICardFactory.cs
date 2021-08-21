@@ -2,6 +2,6 @@
 {
     public interface ICardFactory
     {
-        CardContainer Create();
+        MonoCard Create();
     }
 }

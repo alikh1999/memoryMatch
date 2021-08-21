@@ -1,8 +1,6 @@
 using Gameplay.Card;
 using ScriptableObjects;
 using System.Collections.Generic;
-using System.Linq;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using Zenject;
@@ -28,7 +26,7 @@ namespace Gameplay
         private UnityEvent OnLost;
         
         
-        private List<CardContainer> _cards = new List<CardContainer>();
+        private List<Card.MonoCard> _cards = new List<Card.MonoCard>();
         private LevelData _level;
         private ICardSetGenerator _generator;
  
@@ -60,7 +58,7 @@ namespace Gameplay
             _countdown.OnReachedZero += () => OnLost.Invoke();
         }
 
-        private void OnMatched(List<CardContainer> cards)
+        private void OnMatched(List<Card.MonoCard> cards)
         {
             cards.ForEach(c => _cards.Remove(c));
             if (_cards.Count > 0) 
@@ -70,7 +68,7 @@ namespace Gameplay
             OnWon?.Invoke();
         }
 
-        private void InitCard(CardContainer card)
+        private void InitCard(Card.MonoCard card)
         {
             card.transform.SetParent(_cardsContainer);
             card.GetComponent<CardInteraction>().OnInteacted += () => _matcher.Track(card);

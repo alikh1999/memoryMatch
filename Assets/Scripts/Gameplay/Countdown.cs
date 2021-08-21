@@ -1,5 +1,7 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
+using Zenject;
 
 namespace Gameplay
 {
@@ -13,7 +15,6 @@ namespace Gameplay
 
         public event Action<int> OnCountDown;
         public event Action OnReachedZero;
-        
         [SerializeField]
         private Timer _timer;
 

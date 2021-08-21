@@ -566,10 +566,10 @@ GameObject:
   - component: {fileID: 8147905247181849082}
   - component: {fileID: 7051471507158705915}
   - component: {fileID: 7066397577057944236}
-  - component: {fileID: 6889416750735384719}
   - component: {fileID: 1076614649178441741}
   - component: {fileID: 3078368045659747075}
   - component: {fileID: 2614004439178692327}
+  - component: {fileID: 5719367397475473179}
   m_Layer: 6
   m_Name: NumberCard
   m_TagString: Card
@@ -629,33 +629,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7341c6edb976d14b948007d57465a44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6889416750735384719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8973416761477518092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba9d545dc35798e4c97cc15df4189b4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ContentSetEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2614004439178692327}
-        m_TargetAssemblyTypeName: NumberCardContentView, Assembly-CSharp
-        m_MethodName: UpdateView
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!222 &1076614649178441741
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -689,3 +662,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 68685374}
+--- !u!114 &5719367397475473179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8973416761477518092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6661b2d12e1d8084ea93a240c6e78df5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

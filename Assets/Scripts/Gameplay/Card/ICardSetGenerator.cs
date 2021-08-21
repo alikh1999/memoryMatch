@@ -4,6 +4,6 @@ namespace Gameplay.Card
 {
     public interface ICardSetGenerator
     {
-        List<CardContainer> GenerateSet(CardSetGenerationArgs args);
+        List<MonoCard> GenerateSet(CardSetGenerationArgs args);
     }
 }

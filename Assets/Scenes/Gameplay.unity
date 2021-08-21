@@ -181,7 +181,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
 --- !u!223 &128447105
 Canvas:
   m_ObjectHideFlags: 0
@@ -663,8 +662,6 @@ MonoBehaviour:
   cardFactory: {fileID: 2065010916}
   cardsGenerator: {fileID: 562174811}
   _isWindowsBuild: 0
-  touch: {fileID: 1442751862469821025, guid: ae44857edd15a0f42909c9d255b530c0, type: 3}
-  mouse: {fileID: 6118390440558927384, guid: bb7a53fdf5a693b48b9c1d0ee2372d10, type: 3}
 --- !u!1 &502957070
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,7 +1100,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1241,23 +1237,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e818a049cfaf7f44a51ce16a0406bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardsCount: 0
-  ranges:
-  - focus: 10
-    min: 1
-    max: 10
-  - focus: 3.25
-    min: 10
-    max: 20
-  - focus: 2.5
-    min: 20
-    max: 30
-  - focus: 1.75
-    min: 30
-    max: 40
-  - focus: 1.75
-    min: 40
-    max: 50
 --- !u!1 &739743359
 GameObject:
   m_ObjectHideFlags: 0
@@ -1350,7 +1329,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1699,7 +1677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a43781a5d344b8197aa4893c220c48b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 6889416750735384719, guid: 4639d5adaaa47154ebe148f73d91c3d6, type: 3}
+  _prefab: {fileID: 5719367397475473179, guid: 4639d5adaaa47154ebe148f73d91c3d6, type: 3}
 --- !u!4 &2065010918
 Transform:
   m_ObjectHideFlags: 0

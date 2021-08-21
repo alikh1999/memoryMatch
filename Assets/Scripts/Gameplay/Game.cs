@@ -17,7 +17,7 @@ namespace Gameplay
         [SerializeField]
         private Countdown _countdown;
         [SerializeField]
-        private CardMatcher _matcher;
+        private CardMatcherMono matcherMono;
         
         [Header("Events")]
         [SerializeField]
@@ -45,8 +45,8 @@ namespace Gameplay
 
         private void Init()
         {
-            _matcher.MatchCount = _cardsMatchCount;
-            _matcher.OnMatched += OnMatched;
+            matcherMono.MatchCount = _cardsMatchCount;
+            matcherMono.CardMatcher.OnMatched += OnMatched;
 
             var args = new CardSetGenerationArgs(_level.CardsCount, _cardsMatchCount);
             var cards = _generator.GenerateSet(args);
@@ -58,9 +58,9 @@ namespace Gameplay
             _countdown.OnReachedZero += () => OnLost.Invoke();
         }
 
-        private void OnMatched(List<Card.MonoCard> cards)
+        private void OnMatched(List<Card.MonoCard> monoCards)
         {
-            cards.ForEach(c => _cards.Remove(c));
+            monoCards.ForEach(c => _cards.Remove(c));
             if (_cards.Count > 0) 
                 return;
             
@@ -68,11 +68,11 @@ namespace Gameplay
             OnWon?.Invoke();
         }
 
-        private void InitCard(Card.MonoCard card)
+        private void InitCard(Card.MonoCard monoCard)
         {
-            card.transform.SetParent(_cardsContainer);
-            card.GetComponent<CardInteraction>().OnInteacted += () => _matcher.Track(card);
-            _cards.Add(card);
+            monoCard.transform.SetParent(_cardsContainer);
+            monoCard.GetComponent<CardInteraction>().OnInteacted += () => matcherMono.TryShowCards(monoCard);
+            _cards.Add(monoCard);
         }
     }
 }

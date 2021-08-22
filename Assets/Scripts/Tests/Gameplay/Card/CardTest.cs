@@ -4,7 +4,6 @@ using Gameplay.Core;
 
 namespace Tests.UI
 {
-    //TODO: Write 2 more test covering show and hide event 
     public class CardTest
     {
         
@@ -27,7 +26,26 @@ namespace Tests.UI
         }
 
         [Test]
-        public void Should_Fire_HiddenEvent_When_HideCard_Called()
+        public void Should_Fire_ShowEvent_OnlyOneTime_When_Show_HasBeenCalledTwiceWithoutCallingHide()
+        {
+            //arrange
+            bool isCalledOneTime = false;
+            var card = CreateCard();
+            card.Shown += () =>
+            {
+                isCalledOneTime = !isCalledOneTime;
+            };
+                
+            //act
+            card.Show();
+            card.Show();
+            
+            //assert
+            Assert.AreEqual(true, isCalledOneTime);
+        }
+
+        [Test]
+        public void Should_Fire_HiddenEvent_When_Hide_Called()
         {
             //arrange
             bool isHidden = false;
@@ -43,6 +61,26 @@ namespace Tests.UI
             
             //assert
             Assert.AreEqual(true, isHidden);
+        }
+        
+        [Test]
+        public void Should_Fire_HiddenEvent_OnlyOneTime_When_Hide_HasBeenCalled_TwiceWithoutCallingShow()
+        {
+            //arrange
+            bool isCalledOneTime = false;
+            var card = CreateCard();
+            card.Hidden += ()=>
+            {
+                isCalledOneTime = !isCalledOneTime;
+            };
+            card.Show();
+            
+            //act
+            card.Hide();
+            card.Hide();
+            
+            //assert
+            Assert.AreEqual(true, isCalledOneTime);
         }
 
         [Test]
@@ -81,6 +119,7 @@ namespace Tests.UI
             //assert
             Assert.AreEqual(true, isCalledOneTime);
         }
+        
 
         private Card CreateCard()
         {
